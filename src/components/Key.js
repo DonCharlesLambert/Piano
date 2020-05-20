@@ -2,19 +2,19 @@ import React from 'react';
 import SharpKey from './SharpKey';
 
 export default class Key extends React.Component{
+    constructor(props) {
+        super(props);
+        const url = './sounds/' + this.props.note.toLowerCase() + "3 64.wav"
+        this.audio = new Audio()
+        this.audio.src = url
+    }
+
+
+    state = {
+        keyColor: "white"
+    }
 
     style = {
-        main:{
-            width: "5vw",
-            height: "14rem",
-            backgroundColor: "white",
-            borderRadius: "1vw",
-            borderColor: "black",
-            borderWidth: "1px",
-            margin: "0.5px",
-            display: "flex",
-        },
-
         text:{
             position: "relative",
             top: "9rem",
@@ -28,9 +28,37 @@ export default class Key extends React.Component{
         }
     }
 
+    pressKey = () => {
+        this.setState({keyColor: "rgba(0, 0, 70, 0.2)"})
+        this.playSound()
+    }
+
+    releaseKey = () => {
+        this.setState({keyColor: "white"})
+    }
+
+    getKeyStyle = (keycolor) => {
+        let main = {
+            width: "5vw",
+            height: "14rem",
+            borderRadius: "1vw",
+            backgroundColor: keycolor,
+            borderColor: "black",
+            borderWidth: "1px",
+            margin: "0.5px",
+            display: "flex",
+        }
+        return(main)
+    }
+
+
+    playSound = async () => {
+        this.audio.play()
+    }
+
     render(){
         return(
-            <div style={this.style.main}>
+            <div style={this.getKeyStyle(this.state.keyColor)} onTouchStart={this.pressKey} onMouseDown={this.pressKey} onMouseUp={this.releaseKey}>
                 <div style={this.style.text}>
                     <p>{this.props.note}</p>
                 </div>

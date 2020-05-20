@@ -28,7 +28,7 @@ export default class Piano extends React.Component{
                 {this.keys.map(
                     (k, i) => {
                         let note = k;
-                        if(note == "B" || note == "E" || i == this.keys.length - 1){
+                        if(note === "B" || note === "E" || i === this.keys.length - 1){
                             return (<Key note={note}/>)
                         }else{
                             return (<Key note={note} sharp={true}/>)
