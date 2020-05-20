@@ -7,6 +7,7 @@ export default class Key extends React.Component{
         const url = './sounds/' + this.props.note.toLowerCase() + "3 64.mp3"
         this.audio = new Audio()
         this.audio.src = url
+        this.timeout = null;
     }
 
 
@@ -29,12 +30,15 @@ export default class Key extends React.Component{
     }
 
     pressKey = () => {
+        this.audio.play()
         this.setState({keyColor: "rgba(0, 0, 70, 0.2)"})
-        this.playSound()
+        this.timeout = setTimeout(this.releaseKey, 5000)
     }
 
     releaseKey = () => {
         this.setState({keyColor: "white"})
+        this.audio.pause()
+        this.audio.currentTime = 0
     }
 
     getKeyStyle = (keycolor) => {
@@ -49,11 +53,6 @@ export default class Key extends React.Component{
             display: "flex",
         }
         return(main)
-    }
-
-
-    playSound = async () => {
-        this.audio.play()
     }
 
     render(){
