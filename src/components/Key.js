@@ -4,7 +4,7 @@ import SharpKey from './SharpKey';
 export default class Key extends React.Component{
     constructor(props) {
         super(props);
-        const url = './sounds/' + this.props.note.toLowerCase() + "3 64.wav"
+        const url = './sounds/' + this.props.note.toLowerCase() + "3 64.mp3"
         this.audio = new Audio()
         this.audio.src = url
     }
