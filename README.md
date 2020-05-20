@@ -9,7 +9,7 @@ I'd been learning React (and React Native!) for a good minute now and didn't rea
 1. Open Terminal  
 `C:\>`
 
-2. Clone the directory
+2. Clone the directory  
 `C:\> git clone https://github.com/DonCharlesLambert/React-Piano/`
 
 3. Cd into the project directory  
