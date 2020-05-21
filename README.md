@@ -21,6 +21,8 @@ I'd been learning React (and React Native!) for a good minute now and didn't rea
 5. Run npm start  
 `C:\React-Piano\> npm start`
 
+6. Visit http://localhost:3000 or your computers private IP address followed by :3000
+
 ## Screenshots
 ![iPhone 8 screenshot](https://github.com/DonCharlesLambert/React-Piano/blob/master/src/screenshots/ss.jpeg?raw=true)
 Screenshot from an iPhone 8
