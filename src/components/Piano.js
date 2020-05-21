@@ -16,7 +16,7 @@ export default class Piano extends React.Component{
             backgroundColor: "pink",
             borderRadius: "20px",
             display: "flex",
-            flexDirection: "row"
+            flexDirection: "row",
         }
     }
 

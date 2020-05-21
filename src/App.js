@@ -4,7 +4,7 @@ import Piano from './components/Piano'
 class App extends React.Component{
   style = {
     main:{
-      position: "relative",
+      position: "absolute",
       left: "15vw",
       top: "15vh",
     }
